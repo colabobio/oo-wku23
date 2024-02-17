@@ -6,4 +6,6 @@ scipy==1.12.0
 statsmodels==0.14.1
 seaborn==0.13.2
 networkx==3.2.1
-wget=3.2
+tensorly==0.8.0
+joblib==1.3.2
+wget==3.2

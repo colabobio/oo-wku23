@@ -9,3 +9,23 @@ Analysis of the simulation data. Run the notebooks in order:
 * 5-tensor-factorization
 * 6-risk-prediction
 
+## Creating conda environment
+
+The file requirements.txt list all the packages needed by these notebooks. It is recommended to use conda to create an environment with all this packages. 
+
+First, install miniconda (or anaconda):
+
+https://docs.anaconda.com/free/miniconda/
+
+Clone this repo:
+
+```
+git clone https://github.com/colabobio/oo-wku23.git
+```
+
+And the create the environment using the listed requirements:
+
+```
+cd oo-wku23
+conda create --name oo --file requirements.txt
+```

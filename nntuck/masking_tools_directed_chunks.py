@@ -55,7 +55,7 @@ def masking_tensor_chunks(tensor):
     Maskings = [M_1, M_2, M_3, M_4, M_5]
     return Maskings
 
-def Per_alpha(tensor, c, K):
+def Per_alpha_chunks(tensor, c, K):
     # for Y of dimension (L x c) sweep over dimension c
         # for each c, define a set of 5 masking tensors
         # then for each M_i in this set:
@@ -83,7 +83,7 @@ def Per_alpha(tensor, c, K):
         max_results.append(Big_Results[max_idx][j])
     return max_results 
 
-def Per_alpha_c(tensor, K):
+def Per_alpha_c_chunks(tensor, K):
     # for Y == I
         # define a set of 5 masking tensors
         # then for each M_i in this set:
@@ -114,7 +114,7 @@ def Per_alpha_c(tensor, K):
         max_results.append(Big_Results[max_idx][j])
     return max_results
 
-def Per_alpha_ones(tensor, K):
+def Per_alpha_ones_chunks(tensor, K):
     # for Y == I
         # define a set of 5 masking tensors
         # then for each M_i in this set:

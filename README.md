@@ -23,9 +23,9 @@ Clone this repo:
 git clone https://github.com/colabobio/oo-wku23.git
 ```
 
-And the create the environment using the listed requirements:
+And the create the environment installing the listed requirements from the conda-forge channel:
 
 ```
 cd oo-wku23
-conda create --name oo --file requirements.txt
+conda create --name oo --file requirements.txt --channel conda-forge
 ```

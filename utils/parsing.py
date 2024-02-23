@@ -178,3 +178,4 @@ def create_contact_network(user_index, contacts, state, minw=0):
 def remove_nodes_with_less_edges(G, k):
     nodes_to_remove = [node for node, degree in dict(G.degree()).items() if degree < k]
     G.remove_nodes_from(nodes_to_remove)
+    return nodes_to_remove

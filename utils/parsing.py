@@ -156,7 +156,7 @@ def hour_rounder(t):
 
 # Create the network, skipping edges between nodes that spend less than min_contact_time
 # in contact during the entire sim
-def create_contact_network(user_index, contacts, state, minw=0):
+def create_contact_network(user_index, contacts, state_values, state_name="state", minw=0):
     nodes = [i for i in range(0, len(user_index))]
     edges = []
     weights = []    
@@ -172,7 +172,8 @@ def create_contact_network(user_index, contacts, state, minw=0):
     g = nx.Graph()
     g.add_nodes_from(nodes)
     g.add_weighted_edges_from([(edges[i][0], edges[i][1], weights[i]) for i in range(len(edges))])
-    
+    state_dict = dict(zip(g.nodes(), state_values))    
+    nx.set_node_attributes(g, state_dict, state_name)
     return g
 
 def remove_nodes_with_less_edges(G, k):

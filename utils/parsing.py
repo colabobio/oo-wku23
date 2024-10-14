@@ -180,3 +180,17 @@ def remove_nodes_with_less_edges(G, k):
     nodes_to_remove = [node for node, degree in dict(G.degree()).items() if degree < k]
     G.remove_nodes_from(nodes_to_remove)
     return nodes_to_remove
+
+def get_modifiers_list(events):
+    modifiers = events[(events["type"] == "modifier")]
+    return modifiers
+
+def get_score_events(events):
+    scores = events[(events["type"] == "score")]
+    return scores
+
+def get_modifier_count(events, name):
+    return len(events[(events["modifier"] == name)])    
+
+def get_info_count(events, name):
+    return len(events[(events["inf"] == name)])

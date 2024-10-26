@@ -1,13 +1,17 @@
 import numpy as np
 from statsmodels.stats.weightstats import DescrStatsW
 
+def is_number(x):
+    return isinstance(x, (int, float, np.integer, np.floating)) and not np.isnan(x) 
+    
 def get_attrib_data(G, attrib_name):
     data = []
     for n, m, d in G.edges(data=True):
         rn = G.nodes[n][attrib_name]
         rm = G.nodes[m][attrib_name]
-        w = d['weight']
-        if not np.isnan(rn) and not np.isnan(rm):
+        if is_number(rn) and is_number(rm):
+            #if not np.isnan(rn) and not np.isnan(rm):
+            w = d['weight']            
             data.append([rn, rm, w])
     return np.array(data)
 
